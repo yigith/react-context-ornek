@@ -1,23 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import UyelikContext from './UyelikContext';
+import { useContext } from 'react';
+import Anasayfa, { Hakkinda, Iletisim, Hizmetler } from './sayfalar'
+import Gizlilik from './Gizlilik';
+import Uyelik from './Uyelik';
 
 function App() {
+  const ctx = useContext(UyelikContext);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Uygulamam ({ctx.uyeAdi})</h1>
+      <Anasayfa />
+      <Hakkinda />
+      <Hizmetler />
+      <Iletisim />
+      <Gizlilik />
+      <Uyelik />
     </div>
   );
 }
